@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Details - My ASP.NET Application</title>
+    <link href="bootstrap.css" rel="stylesheet"/>
+<link href="site.css" rel="stylesheet"/>
+
+    <script src="modernizr-2.8.3.js"></script>
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="background-color:white; border-bottom-color:black;border-bottom-style:solid; border-bottom-width:1pt;">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-center w-100">
+                <!-- Center content -->
+                <a class="logo d-flex align-items-center">
+                    <img src="Warba Logo.jpg" class="img-fluid" style="max-width: 170px;" /> <!-- Make image responsive -->
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        
+
+<head>
+    <style>
+        fieldset {
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 1.5%;
+        }
+
+        .lableView {
+            /*  float: right; */
+            font-size: small;
+        }
+
+        .card {
+            width: 100%;
+            margin-bottom: 10px !important;
+        }
+
+        .card-body, .card-title {
+            border-radius: 5px;
+        }
+
+        .control-label {
+            /* font-weight: bold; */
+            /*   margin-top: 5px !important;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            margin-bottom: 0px !important; */
+        }
+
+        .form-control {
+            /*  border-color:darkgrey; */
+        }
+
+        .btn-primary {
+            background-color: #37939b !important;
+        }
+
+        .modal {
+            --bs-modal-width: 30% !important;
+        }
+
+        body {
+            text-align: right;
+            direction: rtl;
+        }
+
+        input[type="text"] {
+            font-size: small;
+            width: 100%;
+            text-align: center;
+        }
+
+        input[type="date"] {
+            font-size: smaller;
+            text-align: center;
+        }
+
+        input[type="email"] {
+            font-size: smaller;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row mt-3">
+                <div class="col-sm-6 col-6 ">
+                    <button id="btn_down_pol" class="btn btn-primary btn-block" style="border-color:white;font-size:12px;float:left" onclick="Download_PDF();">
+                        Download Document
+                    </button>
+                </div>
+
+                <div class="col-sm-6  col-6 ">
+                    <button id="btn_down_pol1" class="btn btn-primary btn-block" style="border-color: white; font-size: small; float:right" onclick="Download_PDF();">
+                        تحميل وثيقة التأمين
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <br />
+        <div class="row">
+            
+            <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 15px;">
+                    <h2 class="card-title mb-2 text-center mt-0" style="color: white; font-weight: normal; background-color: #c48d3b !important; border-style: solid; border-width: 1px; border-color: black; padding-top: 10px; padding-bottom: 10px; ">تفاصيل المؤمن له</h2>
+                    <div class="card-body">
+                        <div class="col-12">
+                            <input type="hidden" id="Id" value="152492" />
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="control-label  lableView">الدولة</label>
+                                    <input readonly type="text" class="form-control " id="country" value="السعودية" />
+                                </div>
+                                <div class="col-6">
+                                    <label class="control-label  lableView">رقم الهوية الوطنية</label>
+                                    <input readonly type="text" class="form-control" value="1075404440" />
+                                </div>
+                            </div>
+
+
+                            <div class="row" style="margin-right: 0.1%;margin-left: 0.1%;">
+                                <label class="control-label lableView" style="">اسم المؤمن له</label>
+                                <input readonly type="text" class="form-control" value="عبدالله سفر مبارك العتيبي" />
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="control-label  lableView">الجنسية</label>
+                                    <input readonly type="text" class="form-control" value="سعودي" />
+                                </div>
+
+                                <div class="col-6">
+                                    <label class="control-label  lableView">اسم السائق</label>
+                                    <input readonly type="text" class="form-control" value="" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 ">
+                                    <label class="control-label lableView">رمز الدولة</label>
+                                    <input readonly type="text" class="form-control" value="966" />
+                                </div>
+                                <div class="col-6">
+                                    <label class="control-label  lableView">رقم الهاتف النقال</label>
+                                    <input readonly type="text" class="form-control" value="566511556" />
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin-right: 0.1%;margin-left: 0.1%;">
+                                <label class="control-label lableView">البريد الإلكتروني</label>
+                                <input readonly type="email" asp-for="InsuredEmail" class="form-control" value="" />
+                            </div>
+
+                            <div class="row" style="margin-right: 0.1%;margin-left: 0.1%;">
+                                <label class="control-label  lableView">العنوان</label>
+                                <input readonly type="text" class="form-control" value="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+            <div class="col-md-4 mb-4">
+                <div class="card" style=" border-radius: 15px;">
+                    <h2 class="card-title mb-2 text-center mt-0" style="color: white; font-weight: normal; background-color: #c48d3b !important; border-style:solid;border-width:1px;border-color:black; padding-top:10px;padding-bottom:10px;">تفاصيل المركبة</h2>
+                    <div class="card-body">
+                        <div class="col-12">
+                            <div class="row" style="margin-right: 0.1%;margin-left: 0.1%;">
+                                <label class="control-label  lableView">رقم اللوحة</label>
+                                <input readonly type="text" dir="ltr" class="form-control" value="ر ك ه  9676" />
+                            </div>
+                            <div class="row" style="margin-right: 0.1%;margin-left: 0.1%;">
+                                <label class="control-label  lableView">رقم القاعدة</label>
+                                <input readonly type="text" class="form-control ml-2" value="260635" />
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="control-label  lableView">سنة الصنع</label>
+                                    <input readonly type="text" class="form-control ml-2" value="2024" />
+                                </div>
+                                <div class="col-6">
+                                    <label class="control-label  lableView">الشكل</label>
+                                    <input readonly type="text" class="form-control" id="VehicleShape" value="PRIVATE" />
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="control-label  lableView">عدد المقاعد</label>
+                                    <input readonly type="text" id="VehicleSeatingCapacity" class="form-control" value="5" />
+                                </div>
+                                <div class="col-6">
+                                    <label class="control-label  lableView">اللون</label>
+                                    <input readonly type="text" class="form-control" value="ابيض" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-6">
+                                    <label class="control-label  lableView">نوع المركبة</label>
+                                    <input readonly type="text" class="form-control" value="شيفروليه" />
+                                </div>
+
+                                <div class="col-6">
+                                    <label class="control-label  lableView">النوع الفرعي</label>
+                                    <input readonly type="text" class="form-control" value="" />
+                                </div>
+                            </div>
+
+
+                            <div class="row" id="VehicleSubTypeOthers_row" style="margin-right: 0.1%;margin-left: 0.1%;">
+
+                                <label class="control-label lableView required ">النوع الفرعي</label>
+                                <input asp-for="VehicleSubTypeOthers" name="VehicleSubTypeOthers" id="VehicleSubTypeOthers" maxlength="20" class="form-control required" type="text" required value="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <div class="col-md-4 mb-4">
+                <div class="card" style="border-radius: 15px;">
+                    <h2 class="card-title mb-2 text-center mt-0" style="color: white; font-weight: normal; background-color: #c48d3b !important; border-style:solid;border-width:1px;border-color:black;  padding-top:10px;padding-bottom:10px;">تفاصيل التغطية التأمينية</h2>
+                    <div class="card-body">
+                        <div class="col-12">
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="control-label  lableView">من التاريخ</label>
+                                    <input readonly id="PolicyStartDate" type="text" class="form-control" value="2/22/2025 " />
+                                </div>
+                                <div class="col-6">
+                                    <label class="control-label  lableView">تاريخ الانتهاء</label>
+                                    <input readonly id="PolicyEndDate" type="text" class="form-control" value="2/23/2026 " />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="control-label  lableView">المدة</label>
+                                    <input readonly type="text" class="form-control" value="1-YEAR" />
+                                </div>
+                                <div class="col-6">
+                                    <label class="control-label  lableView">تاريخ الشراء</label>
+                                    <input readonly id="PolicyPurchaseDate" type="text" class="form-control" value="2/22/2025 " />
+
+                                </div>
+                            </div>
+                            <div class="row" style="margin-right: 0.1%;margin-left: 0.1%;">
+                                <label class="control-label  lableView">رقم وثيقة التأمين</label>
+                                <input id="policyNumber" readonly type="text" class="form-control" value="BBDMBP2400095112" />
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="control-label  lableView">طريقة الدفع او السداد</label>
+                                    <input type="text" style="font-weight:bold;" readonly asp-for="PaymentMethod" class="form-control" value="CARD" />
+                                </div>
+                                <div class="col-6">
+                                    <label class="control-label  lableView">عملة قسط التأمين</label>
+                                    <input readonly type="text" style="font-weight:bold;" id="PolicyPremiumCurrency" class="form-control" value="KWD" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 ">
+                                    <label class="control-label lableView">رسوم الإشراف</label>
+                                    <input readonly type="text" style="font-weight:bold;" asp-for="PolicySupervisionFee" id="PolicySupervisionFee" name="PolicySupervisionFee" class="form-control" value="1" />
+                                </div>
+                                <div class="col-6 ">
+                                    <label class="control-label  lableView">قسط التأمين</label>
+                                    <input readonly type="text" style="font-weight:bold;" id="PolicyPremium" class="form-control" value="125" />
+                                </div>
+                            </div>
+                            <div class="row" style="margin-right: 0.1%;margin-left: 0.1%;">
+                                <label class="control-label  lableView">المبلغ</label>
+                                <input type="text" style="font-weight:bold;" readonly id="amount" asp-for="Amount" class="form-control" value="126" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <span id="FormattedStartDate"></span>
+    </div>
+    <div>
+        <span id="FormattedPurchaseDate"></span>
+    </div>
+    <div>
+        <span id="FormattedEndDate"></span>
+    </div>
+
+</body>
+
+
+<script>
+
+
+    window.onload =
+        function load_d() {
+
+
+            if ('' == 'othr")') {
+                $('#VehicleSubTypeOthers_row').show();
+
+            }
+            else {
+                $('#VehicleSubTypeOthers_row').hide();
+            }
+
+            var cur = document.getElementById("PolicyPremiumCurrency");
+            var curr = cur.value;
+            if (curr == 'OMR' || curr == 'BHD') {
+                document.getElementById('PolicyPremium').value = Number('125').toFixed(2);
+                document.getElementById('amount').value = Number('126').toFixed(2);
+            }
+            else {
+                document.getElementById('PolicyPremium').value = Math.trunc('125');
+                document.getElementById('amount').value = Math.trunc('126');
+            }
+            //Convert_Date_To_DDMMYYYY();
+
+
+            // Call the function to execute when needed
+            ConvertExistingDatesToDDMMYYYY();
+
+        }
+
+    function ConvertExistingDatesToDDMMYYYY() {
+        // Array of input field IDs
+        const dateFieldIds = ['PolicyStartDate', 'PolicyPurchaseDate', 'PolicyEndDate'];
+
+        // Function to format the date to DD/MM/YYYY
+        const formatDateToDDMMYYYY = (dateString) => {
+            // Remove the time part if it exists
+            const datePart = dateString.split(' ')[0]; // Get only the date part (before the space)
+
+            // Create a new Date object using the date part
+            const parts = datePart.split('/'); // Assuming the input is in MM/DD/YYYY format
+            const month = parseInt(parts[0], 10) - 1; // Months are 0-indexed in JS
+            const day = parseInt(parts[1], 10);
+            const year = parseInt(parts[2], 10);
+
+            const date = new Date(year, month, day);
+
+            // Check if the date is valid
+            if (isNaN(date.getTime())) {
+                console.error("Invalid date:", dateString);
+                return '';
+            }
+
+            // Format the date as DD/MM/YYYY
+            const formattedDay = String(date.getDate()).padStart(2, '0');
+            const formattedMonth = String(date.getMonth() + 1).padStart(2, '0');
+            const formattedYear = date.getFullYear();
+
+            return `${formattedDay}/${formattedMonth}/${formattedYear}`; // Return formatted date
+        };
+
+        // Loop through each field ID to format and update the value
+        dateFieldIds.forEach(id => {
+            const dateValue = document.getElementById(id).value;
+            const formattedDate = formatDateToDDMMYYYY(dateValue);
+            document.getElementById(id).value = formattedDate; // Update the input field
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    //function Convert_Date_To_DDMMYYYY() {
+    //    const defaultDate = new Date('2024-06-30T00:00:00');
+    //    const day = String(defaultDate.getDate()).padStart(2, '0');
+    //    const month = String(defaultDate.getMonth() + 1).padStart(2, '0');
+    //    const year = defaultDate.getFullYear();
+    //    document.getElementById('PolicyStartDate').value = `${day}-${month}-${year}`;
+    //    document.getElementById('PolicyPurchaseDate').value = `${day}-${month}-${year}`;
+    //    document.getElementById('PolicyEndDate').value = `${day}-${month}-${year}`;
+    //}
+
+
+    function Download_PDF() {
+        var idx = document.getElementById("Id").value;
+        var urld = '/QR/Home/DownloadPdf/record_id';
+        var furl = urld.replace('record_id', idx);
+        $.ajax({
+            type: "GET",
+            url: furl,
+            success: function (response) {
+                initiateDownload(response.pdfUrl);
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+        });
+
+
+    }
+
+
+
+
+    function initiateDownload(pdfUrl) {
+        var link = document.createElement('a');
+        link.href = pdfUrl;
+        link.download = 'Policy.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+
+    //function convertDate(dateobj) {
+    //    const inputDate = dateobj; // Original date
+    //    const dateObject = new Date(inputDate); // Convert to Date object
+
+    //    // Extract day, month, and year
+    //    const day = String(dateObject.getUTCDate()).padStart(2, '0');
+    //    const month = String(dateObject.getUTCMonth() + 1).padStart(2, '0'); // Months are zero-based
+    //    const year = dateObject.getUTCFullYear();
+
+    //    // Format to DD/MM/YYYY
+    //    const formattedDate = `${day}-${month}-${year}`;
+    //    console.log(formattedDate);
+    //    return formattedDate;
+    //}
+
+
+
+    //function formatdx(dateobj) {
+    //    var dateObject = new Date(dateobj);
+    //    var day = dateObject.getDate();
+    //    var month = dateObject.getMonth() + 1;
+    //    var year = dateObject.getFullYear();
+    //    day = day < 10 ? "0" + day : day;
+    //    month = month < 10 ? "0" + month : month;
+    //    // var formattedDate = day + "/" + month + "/" + year;
+    //    var formattedDate = year + "-" + month + "-" + day;
+    //    return formattedDate;
+    //}
+
+
+    //function formatToDDMMYYYY(dateobj) {
+    //    var dateObject = new Date(dateobj);
+    //    var day = String(dateObject.getDate()).padStart(2, '0');
+    //    var month = String(dateObject.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+    //    var year = dateObject.getFullYear();
+    //    return day + "-" + month + "-" + year; // DD/MM/YYYY format
+    //}
+
+
+</script>
+
+        <hr />
+        <footer>
+            <p>&copy; 2025 - Warba Insurance</p>
+        </footer>
+    </div>
+
+    <script src="/QR/Scripts/jquery-3.4.1.js"></script>
+
+    <script src="/QR/Scripts/bootstrap.js"></script>
+
+    
+</body>
+</html>
